@@ -1,0 +1,19 @@
+FROM python:3.8.5-alpine
+
+ENV PYTHONBUFFERED 1
+
+RUN pip install --upgrade pip
+
+RUN mkdir /app
+
+COPY ./requirements.txt .
+
+RUN pip install -r requirements.txt
+
+COPY ./iss /app
+
+WORKDIR /app
+
+COPY ./entrypoint.sh /
+
+ENTRYPOINT [ "sh", "/entrypoint.sh" ]

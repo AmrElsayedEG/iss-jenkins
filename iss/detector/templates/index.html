@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hi</title>
+</head>
+<body>
+<form method = 'POST'>
+{% csrf_token %}
+     <label for="fname">Country:</label>
+{#  <input type="text" id="fname" name="cou"><br><br>br#}
+    <select id="loc" name="loc">
+  <option value="Egypt Cairo">Egypt - cairo</option>
+  <option value="Saudi_Arabia Riyadh">Saudi Arabia - riyadh</option>
+        <option value="UAE Abu_Dhabi">United Arab Emarates - abu dhabi</option>
+    </select>
+
+    <button nacatme="loion">Click Me</button>
+</form>
+<h1>ISS Detector</h1>
+<div class="table">
+    <table style="width: 100%">
+        <tr style="border: 1px solid black">
+            <td style="border: 1px solid black">Date</td>
+            <td style="border: 1px solid black">Visible</td>
+            <td style="border: 1px solid black">Max Height</td>
+            <td style="border: 1px solid black">Appear Direction</td>
+            <td style="border: 1px solid black">Dissapear Direction</td>
+        </tr style="border: 1px solid black">
+        {%  for n_t in n_t %}
+            <tr style="border: 1px solid black">
+            {% for x in n_t %}
+                <td style="border: 1px solid black">{{ x }}</td>
+                {%  endfor %}
+            </tr>
+        {%  endfor %}
+    </table>
+
+</div>
+</body>
+</html>
