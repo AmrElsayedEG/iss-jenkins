@@ -1,11 +1,5 @@
 version: '3.7'
 services:
-  # test:
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile.test
-  #   command: python manage.py test
-
   web:
     volumes:
       - static:/static
