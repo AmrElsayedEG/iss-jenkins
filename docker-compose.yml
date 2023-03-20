@@ -10,17 +10,17 @@ services:
       dockerfile: Dockerfile
     expose:
       - 8000
-  #   depends_on:
-  #     - db
+    depends_on:
+      - db
 
-  # db:
-  #   image: postgres:13.0-alpine
-  #   volumes:
-  #     - postgres_data:/var/lib/postgresql/data/
-  #   environment:
-  #     - POSTGRES_USER=amr
-  #     - POSTGRES_PASSWORD=24092793
-  #     - POSTGRES_DB=iss
+  db:
+    image: postgres:13.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=amr
+      - POSTGRES_PASSWORD=24092793
+      - POSTGRES_DB=iss
 
   nginx:
     build: ./nginx
@@ -33,8 +33,7 @@ services:
 
 volumes:
   static:
-  # postgres_data:
-
+  postgres_data:
 
 # sudo docker-compose up --build
 # sudo docker-compose run test
