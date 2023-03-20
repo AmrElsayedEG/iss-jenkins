@@ -35,5 +35,6 @@ volumes:
   static:
   # postgres_data:
 
+
 # sudo docker-compose up --build
 # sudo docker-compose run test
